@@ -1,0 +1,21 @@
+﻿@using HW_04_30_2025.Data
+
+<div class="container">
+    <a class="btn btn-info" href="/home/upload">Upload an Image</a>
+
+    @foreach (var image in Model.Images)
+    {
+        <div class="col-md-4">
+            <div class="card">
+
+                <div class="card-body">
+                    <h5>@image.Title</h5>
+                    <h3>@image.UploadedDate</h3>
+                    <a href="home/viewImage?id=@image.Id">
+                      <img style="width: 400px" src="/uploads/@image.FileName"  />
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

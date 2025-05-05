@@ -1,0 +1,19 @@
+﻿@using HW_04_30_2025.Data
+@model HW_04_30_2025.Data.Image
+<div class="container">
+    <div class="row">
+        <input type="hidden" id="image-id" value="@Model.Id" />
+        <div class="col-md-10 rounded shadow">
+            <h2>@Model.Title</h2>
+            <img src="/uploads/Image.FileName" style="width: 900px;" />
+            <br />
+            <br />
+            <button id="like-button" class="btn btn-success">Like</button>
+            Current Likes: 
+            <span id="likes-count">@Model.Likes</span>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script src="~/js/upload.js"></script>
+    }
