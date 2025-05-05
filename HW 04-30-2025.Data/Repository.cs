@@ -45,10 +45,11 @@ namespace HW_04_30_2025.Data
         {
             using var ctx = new ImageUploadContext(_connectionString);
             var image = ctx.Images.FirstOrDefault(i => i.Id == id);
-
-            image.Likes++;
-            ctx.SaveChanges();
-
+            if (image != null)
+            {
+                image.Likes++;
+                ctx.SaveChanges();
+            }
         }
 
         public int GetLikes(int id)

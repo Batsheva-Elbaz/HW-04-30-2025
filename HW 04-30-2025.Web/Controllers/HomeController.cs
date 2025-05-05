@@ -73,7 +73,8 @@ namespace HW_04_30_2025.Web.Controllers
                 var repo = new Repository(_connectionString);
                 repo.IncrementLikes(id);
             }
-            return Json(new { likes = liked });
+            var updateLikes = new Repository(_connectionString).GetLikes(id);
+            return Json(new { likes = updateLikes });
         }
 
         public IActionResult GetLikes(int id)
